@@ -1,10 +1,10 @@
 <template>
-    <v-app>
-        <v-card >
+    <v-app >
+        <v-card>
             <v-card-title class="black white--text">
                 <span class="headline">Menu</span>
                 <v-spacer></v-spacer>
-                <v-menu bottom left>
+                <v-menu bottom right>
                     <template v-slot:activator="{ on }">
                         <v-btn dark icon v-on="on">
                             <v-icon>mdi-dots-vertical</v-icon>
