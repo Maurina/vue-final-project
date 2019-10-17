@@ -1,7 +1,6 @@
 <template>
     <v-app >
-        <v-card>
-            <v-card-title class="black white--text">
+        <div class="menu">
                 <span class="headline">Menu</span>
                 <v-spacer></v-spacer>
                 <v-menu bottom right>
@@ -16,8 +15,8 @@
                        </v-list-item>
                    </v-list>
                 </v-menu> 
-            </v-card-title>   
-        </v-card> 
+         
+        </div> 
              
     </v-app>
 </template>
@@ -35,5 +34,7 @@ export default {
 </script>
 
 <style scoped>
-
+ .menu{
+     height: 50px;
+ }
 </style>
