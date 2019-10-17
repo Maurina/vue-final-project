@@ -11,46 +11,85 @@
       >
         <v-card-title>Newsletter Sign Up</v-card-title>
       </v-img>
-   <form>
+
+   
+    <v-form
+      class="form"
+      ref="form"
+      v-model="valid"
+      :lazy-validation="lazy"
+    >
       <v-text-field
-        v-model="userData.name"
-        :error-messages="nameErrors"
-        :counter="10"
+        v-model="name"
+     
+        :rules="nameRules"
         label="Name"
         required
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
       ></v-text-field>
+
       <v-text-field
-        v-model="userData.email"
-        :error-messages="emailErrors"
+        v-model="email"
+        :rules="emailRules"
         label="E-mail"
         required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
       ></v-text-field>
-      <v-btn  class="submitBtn black white--text" @click="submit">Sign Up</v-btn>
-    </form>
+
+      <v-checkbox
+        v-model="checkbox"
+        
+        label="Do you want to be notified about discounts?"
+        
+      ></v-checkbox>
+
+      <v-btn
+        :disabled="!valid"
+       
+        class="submitBtn black white--text"
+        @click="submit"
+      >
+        Sign Up
+      </v-btn>
+    </v-form>
+
     </v-card>
-    <h1> email {{ userData.email }} </h1>
-    <h2> name {{ userData.name}} </h2>
+    <h1> email {{ email }} </h1>
+    <h2> name {{ name}} </h2>
 </div>    
 </template>
 
 <script>
-
-export default {
-  data() {
-    return{
+  export default {
+    data: () => ({
       valid: true,
-      userData: {
-        email: '',
-        name: ''
-      }
-    }
-  }
-}
+      name: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+       
+      ],
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      select: null,
+      items: [
+        'Item 1',
+        'Item 2',
+        'Item 3',
+        'Item 4',
+      ],
+      checkbox: false,
+      lazy: false,
+    }),
 
+    methods: {
+      validate () {
+        if (this.$refs.form.validate()) {
+          this.snackbar = true
+        }
+      },
+    },
+  }
 </script>
 
 <style scoped>
