@@ -1,10 +1,7 @@
 <template>
   <v-app>
    <div>
-     <app-header></app-header>
-     <app-nasaDay></app-nasaDay>
-      <app-newsletter></app-newsletter>
-     <app-footer></app-footer>
+    <router-view></router-view>
    </div>
   </v-app>
 </template>

@@ -40,8 +40,8 @@
       x: 0,
       y: 0,
       items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
+        { title: 'Home' },
+        { title: 'About' },
         { title: 'Click Me' },
         { title: 'Click Me 2' },
       ],
