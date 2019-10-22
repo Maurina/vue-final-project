@@ -22,6 +22,7 @@
             v-for="(item, i) in items"
             :key="i"
             @click=""
+            router :to="items.route"
           >
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
@@ -40,8 +41,8 @@
       x: 0,
       y: 0,
       items: [
-        { title: 'Home' },
-        { title: 'About' },
+        { title: 'Home', route: '/' },
+        { title: 'About', route: '/about' },
         { title: 'Click Me' },
         { title: 'Click Me 2' },
       ],
