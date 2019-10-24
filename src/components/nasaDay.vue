@@ -2,6 +2,11 @@
 <div>
     <v-content>
         <!-- 2019-09-18_3790 -->
+        <h1> Nasa's Image of the day </h1>
+        <h2> {{ title }} </h2>
+        <img src="https://apod.nasa.gov/apod/image/1910/Barnard150Seahorse1024.jpg" alt="Image of the Day">
+        <h3> {{ date }} </h3>
+        <p> {{ text }} </p>
     </v-content>    
 
 </div>   
@@ -12,7 +17,11 @@ import axios from 'axios'
 export default {
     data: () =>{
         return{
-            imageDay
+                title: response.title,
+                picture: response.url,
+                date: response.date,
+                text: response.explanation,
+            
         }
     },
     methods: {

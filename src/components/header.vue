@@ -18,9 +18,7 @@
         </template>
   
         <v-list>
-         
-           
-        <v-list-item>
+           <v-list-item>
           <v-list-item-title>
             <router-link to="/" tag="li" active-class="active" exact>
               <a class= "black--text">Home</a>

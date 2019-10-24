@@ -1,8 +1,10 @@
 <template>
   <div class="home">
          <app-header></app-header>
-    <h1>Home</h1>
-
+        
+          <div class="frame">
+            <h1>Home</h1>
+          </div><!--frame-->
      <app-footer></app-footer>
   </div>
 </template>
@@ -26,3 +28,9 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+.frame{
+  padding: 2%;
+}
+</style>

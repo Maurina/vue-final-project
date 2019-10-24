@@ -1,8 +1,10 @@
 <template>
   <div class="about">
          <app-header></app-header>
-     <app-nasaDay></app-nasaDay>
-      <app-newsletter></app-newsletter>
+             <div class="frame">
+              <app-nasaDay></app-nasaDay>
+              <app-newsletter></app-newsletter>
+            </div><!--frame-->
      <app-footer></app-footer>
   </div>
 </template>
@@ -26,3 +28,9 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+.frame{
+  padding: 2%;
+}
+</style>
