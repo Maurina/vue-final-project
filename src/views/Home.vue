@@ -4,6 +4,7 @@
         
           <div class="frame">
             <h1>Home</h1>
+            
           </div><!--frame-->
      <app-footer></app-footer>
   </div>
@@ -20,8 +21,7 @@ export default {
   components: {
     'app-header' : header,
     'app-nasaDay' : nasaDay,
-
-    'app-footer' : footer,
+    'app-footer' : footer
   },
   data: () => ({
     //

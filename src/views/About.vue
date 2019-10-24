@@ -3,7 +3,7 @@
          <app-header></app-header>
              <div class="frame">
               <app-nasaDay></app-nasaDay>
-              <app-newsletter></app-newsletter>
+             
             </div><!--frame-->
      <app-footer></app-footer>
   </div>
@@ -12,7 +12,7 @@
 <script>
 import header from '../components/header'
 import nasaDay from '../components/nasaDay'
-import newsletter from '../components/newsletter'
+
 import footer from '../components/footer'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   components: {
     'app-header' : header,
     'app-nasaDay' : nasaDay,
-    'app-newsletter' : newsletter,
+
     'app-footer' : footer,
   },
   data: () => ({

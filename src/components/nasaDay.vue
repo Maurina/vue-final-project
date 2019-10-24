@@ -3,10 +3,14 @@
     <v-content>
         <!-- 2019-09-18_3790 -->
         <h1> Nasa's Image of the day </h1>
-        <h2> {{ title }} </h2>
-        <img src="https://apod.nasa.gov/apod/image/1910/Barnard150Seahorse1024.jpg" alt="Image of the Day">
-        <h3> {{ date }} </h3>
-        <p> {{ text }} </p>
+        <h3>Choose a date from June 16, 1995 to present</h3>
+        <p>yyyy-mm-dd format *dashes required</p>
+        <form v-on:submit.prevent="getResult(date)">
+            <input type="text" v-model="date" placeholder="yyyy-mm-dd">
+        </form>
+        <h3> {{ title }} </h3>
+        <img v-bind:src="url" />
+        <p> {{ explanation }} </p>
     </v-content>    
 
 </div>   
@@ -17,24 +21,32 @@ import axios from 'axios'
 export default {
     data: () =>{
         return{
-                title: response.title,
-                picture: response.url,
-                date: response.date,
-                text: response.explanation,
+            dayPicture: '',
+            date:'',
+            explanation:'',
+            url:'',
+            title: ''
             
         }
     },
     methods: {
-        getData() {
-            return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE').then
+        getResult(date) {
+            return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
             (response =>{
-                console.log(response)
+                console.log(response.data)
+                this.explanation = response.data.explanation
+                this.date = response.data.date
+                this.url = response.data.url
+                this.title = response.data.title
             }).catch(error => console.log(error))
         }
-    }
+    } 
 }
 </script>
 
 <style scoped>
-
+img {
+    width: 300px;
+    margin: 10px;
+}
 </style>

@@ -46,12 +46,7 @@
       showMenu: false,
       x: 0,
       y: 0,
-      items: [
-        { title: 'Home', route: '/' },
-        { title: 'About', route: '/about' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
-      ],
+   
     }),
 
     methods: {
