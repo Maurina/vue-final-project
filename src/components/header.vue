@@ -18,14 +18,22 @@
         </template>
   
         <v-list>
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-            @click=""
-            router :to="items.route"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
+         
+           
+        <v-list-item>
+          <v-list-item-title>
+            <router-link to="/" tag="li" active-class="active" exact>
+              <a class= "black--text">Home</a>
+            </router-link>
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title> 
+            <router-link to="/about" tag="li" active-class="active">
+              <a class= "black--text">About</a>
+            </router-link>
+          </v-list-item-title>
+        </v-list-item>
         </v-list>
       </v-menu>
  
@@ -70,4 +78,17 @@
   color: white;
   padding: 2%;
 }
+li{
+  list-style-type: none;
+  padding: .5rem 1.5rem;
+
+}
+
+a{
+  text-decoration: none;
+ }
+
+ .active{
+   color: blue;
+ }
 </style>
