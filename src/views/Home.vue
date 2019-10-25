@@ -4,7 +4,7 @@
         
           <div class="frame">
             <h1>Home</h1>
-            
+  
           </div><!--frame-->
      <app-footer></app-footer>
   </div>
@@ -13,15 +13,16 @@
 <script>
 import header from '../components/header'
 import nasaDay from '../components/nasaDay'
-
 import footer from '../components/footer'
+
 
 export default {
   name: 'App',
   components: {
     'app-header' : header,
     'app-nasaDay' : nasaDay,
-    'app-footer' : footer
+    'app-footer' : footer,
+   
   },
   data: () => ({
     //
