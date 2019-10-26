@@ -5,12 +5,14 @@
         <h1> Nasa's Image of the day </h1>
         <h3>Choose a date from June 16, 1995 to present</h3>
         <p>yyyy-mm-dd format *dashes required</p>
-        <form v-on:submit.prevent="getResult(date)">
+        <v-form v-on:submit.prevent="getResult(date)">
             <input type="text" v-model="date" placeholder="yyyy-mm-dd">
-        </form>
-        <h3> {{ title }} </h3>
+        </v-form>
+        <v-card>
+        <v-card-title> {{ title }} </v-card-title>
         <img v-bind:src="url" />
-        <p> {{ explanation }} </p>
+        <v-card-text> {{ explanation }} </v-card-text>
+        </v-card>
     </v-content>    
 
 </div>   
@@ -46,7 +48,8 @@ export default {
 
 <style scoped>
 img {
-    width: 300px;
+    width: 100%;
     margin: 10px;
 }
+
 </style>
