@@ -16,6 +16,8 @@
 
 ## Vue Router
 
+## Vuex
+
 
 ## Project setup
 ```

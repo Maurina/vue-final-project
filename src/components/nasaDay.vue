@@ -1,19 +1,27 @@
 <template>
 <div>
-    <v-content>
+    <v-container>
+        <v-row>
         <!-- 2019-09-18_3790 -->
-        <h1> Nasa's Image of the day </h1>
-        <h3>Choose a date from June 16, 1995 to present</h3>
-        <p>yyyy-mm-dd format *dashes required</p>
-        <v-form v-on:submit.prevent="getResult(date)">
-            <input type="text" v-model="date" placeholder="yyyy-mm-dd">
-        </v-form>
-        <v-card class="card">
-        <v-card-title> {{ title }} </v-card-title>
-        <img v-bind:src="url" />
-        <v-card-text> {{ explanation }} </v-card-text>
-        </v-card>
-    </v-content>    
+            <v-col class="text-center">
+                <h1> Nasa's Image of the day </h1>
+                <h3>Choose a date from June 16, 1995 to present</h3>
+                <p>yyyy-mm-dd format *dashes required</p>
+                <v-form v-on:submit.prevent="getResult(date)" class="formDate">
+                    <input type="text" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd"> 
+                    <v-btn type="submit" class="submitBtn" color="black white--text">Get Image</v-btn>
+                </v-form>
+            </v-col>
+            <v-col>
+             
+                <h2> {{ title }} </h2>
+   <div class="card">
+                <img v-bind:src="url" />
+                <p> {{ explanation }} </p>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>    
 
 </div>   
 </template>
@@ -24,7 +32,14 @@ export default {
     data: () =>{
         return{
             dayPicture: '',
-            date:'',
+            month: '',
+            year: '',
+            day: '',
+            date: new Date().toISOString().substr(0,10),
+            dateRules: [
+                v => !!v || 'Dashes are required',
+                v => /.+-.+-/.test(v) || 'Dashes mush be used'
+            ],
             explanation:'',
             url:'',
             title: ''
@@ -47,12 +62,21 @@ export default {
 </script>
 
 <style scoped>
-.card{
-    width: 50%;
+
+
+input{
+    height: 35px;
+    margin-right: 13%;
 }
+
+h2{
+    text-align: center;
+}
+
 img {
     width: 100%;
-    margin: 10px;
+    margin: 2% 0;
+  
 }
 
 </style>

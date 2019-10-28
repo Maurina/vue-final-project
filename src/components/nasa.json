@@ -353,7 +353,7 @@
 },
 {
     "Title": "Sun Shines in High-Energy X-rays", 
-    "Description": : "X-rays stream off the sun in this first picture of the sun, overlaid on a picture taken by NASA Solar Dynamics Observatory SDO, taken by NASA NuSTAR. The field of view covers the west limb of the sun.",
+    "Description": "X-rays stream off the sun in this first picture of the sun, overlaid on a picture taken by NASA Solar Dynamics Observatory SDO, taken by NASA NuSTAR. The field of view covers the west limb of the sun.",
     "Image": "http://images-assets.nasa.gov/image/PIA18906/PIA18906~orig.jpg", 
     "Metadata":"http://images-assets.nasa.gov/image/PIA18906/metadata.json",
     "Source":  "NASA/JPL-Caltech/GSFC", 
@@ -458,14 +458,5 @@
     "Source":  "NASA/JPL-Caltech/University of Arizona",
     "DateCreated":  "2014:10:29 23:04:59",
     "Keywords": ["Mars", "Mars Reconnaissance Orbiter MRO"]
-},
-{
-    "Title": 
-    "Description": 
-    "Image": "http://images-assets.nasa.gov/image/PIA/PIA~orig.jpg", 
-    "Metadata":"http://images-assets.nasa.gov/image/PIA/metadata.json",
-    "Source": 
-    "DateCreated": 
-    "Keywords": 
-},
+}
 ]

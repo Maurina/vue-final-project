@@ -15,6 +15,8 @@ import header from '../components/header'
 import nasaDay from '../components/nasaDay'
 import footer from '../components/footer'
 
+import { nasaDatas } from '../components/nasa.json'
+
 
 export default {
   name: 'App',
@@ -25,8 +27,9 @@ export default {
    
   },
   data: () => ({
-    //
+      date: ''
   })
+ 
 }
 </script>
 
