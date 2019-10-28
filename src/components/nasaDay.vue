@@ -8,7 +8,7 @@
         <v-form v-on:submit.prevent="getResult(date)">
             <input type="text" v-model="date" placeholder="yyyy-mm-dd">
         </v-form>
-        <v-card>
+        <v-card class="card">
         <v-card-title> {{ title }} </v-card-title>
         <img v-bind:src="url" />
         <v-card-text> {{ explanation }} </v-card-text>
@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style scoped>
+.card{
+    width: 50%;
+}
 img {
     width: 100%;
     margin: 10px;

@@ -2,6 +2,20 @@
 
 ## Netlify : https://romantic-hopper-6a4799.netlify.com/
 
+## Array Methods
+
+## Communication between components
+
+## Form validation
+
+## Custom directive
+
+## Animations and Trasitions
+
+## Axios
+
+## Vue Router
+
 
 ## Project setup
 ```
