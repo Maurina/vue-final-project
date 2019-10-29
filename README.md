@@ -2,21 +2,32 @@
 
 ## Netlify : https://romantic-hopper-6a4799.netlify.com/
 
-## Array Methods
+### 1. Effectively use conditional logic and JavaScript array methods to render large lists.
 
-## Communication between components
+### 2. Encapsulate your code as VueJs single-file components.
 
-## Form validation
+### 3. Work with the Vue-CLI to create and manage your project within a real development toolset.
 
-## Custom directive
+### 4. Properly use Git for your source version control with an established record.
+#### https://github.com/Maurina
 
-## Animations and Trasitions
+### 5. Allow communication between components using props, custom events, or local store.
 
-## Axios : nasaDay.vue
+### 6. Present a form for user input that provides useful form validation and feedback.
 
-## Vue Router : router.js
+### 7. Create a custom directive and use it on a least one of your components.
 
-## Vuex
+### 8. Use a mix of animations and transitions to enhance some aspect of your project
+
+### 9. Connect to a server using HTTP and display retrieved data.
+#### Axios : nasaDay.vue
+
+### 10. Provide at least 3 different routes with navigation between them using vue-router.
+#### router.js
+
+### 11. Manage your application's state using vuex.
+
+### 12. Structure, document, and deploy your final project code according to common industry practices.
 
 
 ## Project setup
