@@ -27,8 +27,8 @@
         </v-list-item>
         <v-list-item>
           <v-list-item-title> 
-            <router-link to="/about" tag="li" active-class="active">
-              <a class= "black--text">About</a>
+            <router-link to="/daily" tag="li" active-class="active">
+              <a class= "black--text">Daily</a>
             </router-link>
           </v-list-item-title>
         </v-list-item>

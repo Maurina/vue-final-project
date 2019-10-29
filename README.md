@@ -12,9 +12,9 @@
 
 ## Animations and Trasitions
 
-## Axios
+## Axios : nasaDay.vue
 
-## Vue Router
+## Vue Router : router.js
 
 ## Vuex
 
