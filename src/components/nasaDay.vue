@@ -9,16 +9,27 @@
                 <p>yyyy-mm-dd format *dashes required</p>
                 <v-form v-on:submit.prevent="getResult(date)" class="formDate">
                     <input type="text" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd"> 
-                    <v-btn type="submit" class="submitBtn" color="black white--text">Get Image</v-btn>
+                    <v-btn type="submit" class="submitBtn" color="black white--text" >Get Image</v-btn>
                 </v-form>
             </v-col>
             <v-col>
              
-                <h2> {{ title }} </h2>
-   <div class="card">
-                <img v-bind:src="url" />
-                <p> {{ explanation }} </p>
-                </div>
+       
+            <v-card class="mx-auto" max-width="400"> 
+                 <transition name="fade">
+                    <v-img 
+                        class="white--text align-end"
+                        height="200px"
+                        v-bind:src="url"
+                        v-if="show"
+                        >
+               
+                     <v-card-title>{{ title }} </v-card-title>
+                    </v-img>
+                 </transition>
+                <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
+            </v-card>
+     
             </v-col>
         </v-row>
     </v-container>    
@@ -31,6 +42,7 @@ import axios from 'axios'
 export default {
     data: () =>{
         return{
+            show: true,
             dayPicture: '',
             month: '',
             year: '',
@@ -75,8 +87,23 @@ h2{
 
 img {
     width: 100%;
-    margin: 2% 0;
-  
+    margin: auto 0;
+   
 }
 
+/* animation */
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    transition: opacity 2s;
+}
+.fade-leave{
+    opacity: 1;
+}
+.fade-leave-active{
+  transition: opacity 2s;
+  opacity: 0;
+}
 </style>
+
