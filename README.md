@@ -20,7 +20,7 @@
 ### 8. Use a mix of animations and transitions to enhance some aspect of your project
 
 ### 9. Connect to a server using HTTP and display retrieved data.
-#### Axios : nasaDay.vue
+####    nasaDay.vue - https://github.com/Maurina/vue-final-project/blob/master/src/components/nasaDay.vue
 
 ### 10. Provide at least 3 different routes with navigation between them using vue-router.
 #### router.js

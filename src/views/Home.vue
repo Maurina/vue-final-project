@@ -4,7 +4,7 @@
         
           <div class="frame">
             <h1>Home</h1>
-  
+            <app-nasaData></app-nasaData>
           </div><!--frame-->
      <app-footer></app-footer>
   </div>
@@ -12,17 +12,17 @@
 
 <script>
 import header from '../components/header'
-import nasaDay from '../components/nasaDay'
+
+import nasaData  from '../components/nasaData'
 import footer from '../components/footer'
 
-import { nasaDatas } from '../components/nasa.json'
 
 
 export default {
   name: 'App',
   components: {
     'app-header' : header,
-    'app-nasaDay' : nasaDay,
+    'app-nasaData' : nasaData,
     'app-footer' : footer,
    
   },
