@@ -16,17 +16,17 @@
              
        
             <v-card class="mx-auto" max-width="400"> 
-                 <transition name="fade">
+              
                     <v-img 
                         class="white--text align-end"
-                        height="200px"
+        
                         v-bind:src="url"
                         v-if="show"
                         >
                
                      <v-card-title>{{ title }} </v-card-title>
                     </v-img>
-                 </transition>
+           
                 <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
             </v-card>
      
@@ -91,19 +91,6 @@ img {
    
 }
 
-/* animation */
-.fade-enter{
-    opacity: 0;
-}
-.fade-enter-active{
-    transition: opacity 2s;
-}
-.fade-leave{
-    opacity: 1;
-}
-.fade-leave-active{
-  transition: opacity 2s;
-  opacity: 0;
-}
+
 </style>
 
