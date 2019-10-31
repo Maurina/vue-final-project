@@ -15,7 +15,6 @@
 <script>
 import header from '../components/header'
 import quote from '../components/quote'
-import nasaData  from '../components/nasaData'
 import footer from '../components/footer'
 
 
@@ -25,7 +24,6 @@ export default {
   components: {
     'app-header' : header,
     'app-quote' : quote,
-    'app-nasaData' : nasaData,
     'app-footer' : footer,
    
   },

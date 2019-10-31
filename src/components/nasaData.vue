@@ -1,21 +1,34 @@
 <template>
-    <div>
-      
-        <h2> data set </h2>
-     
-        <p> {{ title }}</p>
+    <v-container>
+        <h1>Sort By: </h1>
+        <v-btn @click="show = true">Date Created</v-btn>
+     <v-row>
+       <v-col cols="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.id">
+         <v-card>
+           <v-card-title>
+             <div>
+               <h3> {{ nasaDataSet.title }} </h3>
+               <p> {{ nasaDataSet.Description}} </p>
+             </div>
+           </v-card-title>
+           <v-card-actions>
+             <v-btn @click="show = false">Click</v-btn>
+           </v-card-actions>
+         </v-card>
+       </v-col>
+     </v-row>
+       
   
         <!-- <h1 v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.id"> {{ nasaDataSets.dateCreated }} </h1> -->
-    </div>
+    </v-container>
 </template>
 
 <script>
-
+import { dataMixin } from '..views/dataMixin'
 export default {
-    
       data: () =>{
         return{
-           
+           show: false,
             dateCreated :'',
             title : '',
             image : '',
@@ -23,18 +36,7 @@ export default {
             description : ''
         }
       },
-//methods :{ 
-  //  nasaDataSets,forEach(element => {
-    //  this.dateCreated = nasaDataSets.dateCreated
-
-    //} 
-    methods: {
-    getNasaDataSets(title) {
-      return title[title] || ''
-  console.log(title)
-
-}
-    }
+  mixins:[dataMixin]
 }
 </script>
 

@@ -32,6 +32,13 @@
             </router-link>
           </v-list-item-title>
         </v-list-item>
+          <v-list-item>
+          <v-list-item-title> 
+            <router-link to="/data" tag="li" active-class="active">
+              <a class= "black--text">Data</a>
+            </router-link>
+          </v-list-item-title>
+        </v-list-item>
         </v-list>
       </v-menu>
  

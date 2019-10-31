@@ -2,7 +2,7 @@
     <div class="stars">
        <transition name="fade" appear >
                  
-              <q class="quote" >That’s one small step for man, one giant leap for mankind. - Neil Armstrong</q>
+              <q class="quote" :v-for="quote in quotes"  > {{ quote }}</q>
        </transition>
        <transition name="fadeOut" appear >
               <q class="quote" > We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
@@ -14,24 +14,14 @@
 export default {
       data: () =>{
         return{
-            now: new Date,
-            seconds: new Date().getSeconds(),
-            countDown: 10
+          quotes: [ 
+              "That’s one small step for man, one giant leap for mankind. - Neil Armstrong",
+              "We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead"
+          ]
+          
         }
-      },
-      method:{
-          countDownTimer(){
-              if(this.countDown > 0){
-                  setTimeout(() =>{
-                      this.countDown -= 1
-                      this.countDownTimer()
-                  }, 1000)
-              }
-          }
-      },
-      created(){
-         this.countDownTimer()
-      }
+  
+}
 }
 </script>
 

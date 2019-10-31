@@ -8,8 +8,8 @@
                 <h3>Choose a date from June 16, 1995 to present</h3>
                 <p>yyyy-mm-dd format *dashes required</p>
                 <v-form v-on:submit.prevent="getResult(date)" class="formDate">
-                    <input type="text" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd"> 
-                    <v-btn type="submit" class="submitBtn" color="black white--text" >Get Image</v-btn>
+                    <input type="text" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd"  color="white"> 
+                    <v-btn type="submit" class="submitBtn" color="white black--text" >Get Image</v-btn>
                 </v-form>
             </v-col>
             <v-col>
@@ -24,7 +24,7 @@
                         v-if="show"
                         >
                
-                     <v-card-title>{{ title }} </v-card-title>
+                     <v-card-title class="title">{{ title }} </v-card-title>
                     </v-img>
            
                 <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
@@ -74,23 +74,27 @@ export default {
 </script>
 
 <style scoped>
-
-
 input{
     height: 35px;
     margin-right: 13%;
 }
 
+input[type="text"], textarea {
+
+  background-color : white; 
+
+}
 h2{
     text-align: center;
 }
-
 img {
     width: 100%;
     margin: auto 0;
    
 }
 
-
+h1, h2, p{
+    color: white;
+}
 </style>
 
