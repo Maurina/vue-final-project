@@ -3,7 +3,7 @@
          <app-header></app-header>
         
           <div class="frame">
-            <app-quote></app-quote>
+            <app-nasaData></app-nasaData>
           </div><!--frame-->
       
 
@@ -14,8 +14,8 @@
 
 <script>
 import header from '../components/header'
-import quote from '../components/quote'
 import footer from '../components/footer'
+import nasaData from '../components/nasaData'
 
 
 
@@ -23,20 +23,18 @@ export default {
   name: 'App',
   components: {
     'app-header' : header,
-    'app-quote' : quote,
+    'app-nasaData' : nasaData,
     'app-footer' : footer,
    
   },
-  data: () => ({
-      date: ''
-  })
  
 }
 </script>
 
 <style scoped>
 .frame{
-  padding: 2%;
     background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+
 }
+
 </style>

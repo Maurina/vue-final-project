@@ -19,7 +19,6 @@
               
                     <v-img 
                         class="white--text align-end"
-        
                         v-bind:src="url"
                         v-if="show"
                         >

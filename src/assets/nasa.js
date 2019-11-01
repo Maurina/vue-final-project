@@ -399,15 +399,6 @@ export const nasaDataSets = [
     keywords: ['Ceres', 'Dawn']
   },
   {
-    title: 'Textured Terrain',
-    description: 'Textured Terrain',
-    image: 'http://images-assets.nasa.gov/image/PI18944A/PIA18944~orig.jpg',
-    metadata: 'http://images-assets.nasa.gov/image/PIA18944/metadata.json',
-    source: 'NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington',
-    dateCreated: '2014:11:07 18:31:30',
-    keywords: ['Mercury', 'MESSENGER']
-  },
-  {
     title: 'Sirenum Fossae',
     description: 'The linear features in this image from NASA 2001 Mars Odyssey spacecraft are graben fault bounded depressions. The graben are part of Sirenum Fossae.',
     image: 'http://images-assets.nasa.gov/image/PIA18956/PIA18956~orig.jpg',
