@@ -28,9 +28,11 @@ export default {
     'app-footer' : footer,
    
   },
-  data: () => ({
+  data: () => {
+    return{
       date: ''
-  })
+    }
+  }
  
 }
 </script>

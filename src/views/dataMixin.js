@@ -1,7 +1,7 @@
 import { nasaDataSets } from '../assets/nasa'
 
 export const dataMixin = {
-  data() {
+  data () {
     return {
       nasaDataSets
     }
