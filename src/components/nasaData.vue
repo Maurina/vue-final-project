@@ -3,8 +3,8 @@
         <h1>Sort By: </h1>
         <v-btn @click="show = true">Date Created</v-btn>
      <v-row>
-       <v-col cols="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.id">
-         <v-card>
+       <v-col cols="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
+         <v-card v-if="showing">
            <v-card-title>
              <div>
                <h3> {{ nasaDataSet.title }} </h3>
@@ -17,26 +17,19 @@
          </v-card>
        </v-col>
      </v-row>
-       
-  
-        <!-- <h1 v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.id"> {{ nasaDataSets.dateCreated }} </h1> -->
     </v-container>
 </template>
 
 <script>
-import { dataMixin } from '..views/dataMixin'
+import { dataMixin } from '../views/dataMixin'
+
 export default {
-      data: () =>{
+      data () {
         return{
            show: false,
-            dateCreated :'',
-            title : '',
-            image : '',
-            source : '',
-            description : ''
         }
       },
-  mixins:[dataMixin]
+  mixins: [dataMixin]
 }
 </script>
 
