@@ -12,7 +12,6 @@
 <script>
 import header from '../components/header'
 import nasaDay from '../components/nasaDay'
-
 import footer from '../components/footer'
 
 export default {
@@ -20,7 +19,6 @@ export default {
   components: {
     'app-header' : header,
     'app-nasaDay' : nasaDay,
-
     'app-footer' : footer,
   },
   data: () => ({
@@ -32,6 +30,6 @@ export default {
 <style scoped>
 .frame{
   padding: 2%;
-    background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  background:#000 url(../assets/images/stars.png) repeat top center;
 }
 </style>
