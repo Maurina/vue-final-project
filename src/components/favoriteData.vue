@@ -1,10 +1,9 @@
 <template>
-    <v-container>
-        <h1>Sort By: </h1>
-
-        <v-btn >Date Created</v-btn>
+        
+        <v-container>
+        <h1>Favorites </h1>
      <v-row>
-       <v-col col="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
+       <v-col col="3" v-for="favorite in favorites"  v-bind:key="favorite.dateCreated" :favorite="favorite">
        
          <v-card class="mx-auto" max-width="300" outlinded :elevation="14" >
            <v-card-title> {{ nasaDataSet.title }}  </v-card-title>
@@ -18,9 +17,6 @@
               <div v-if="show">
                 <v-card-text> {{ nasaDataSet.description }} </v-card-text>
                 <v-card-subtitle>   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
-                <v-card-actions>
-                  <v-btn  color="black white--text" > Add to favorites </v-btn>
-                </v-card-actions>
               </div>
             </v-expand-transition>
          </v-card>
@@ -30,27 +26,27 @@
 </template>
 
 <script>
-import { dataMixin } from '../views/dataMixin'
+import header from '../components/header'
+import footer from '../components/footer'
+
+
 
 export default {
-      data () {
-        return{
-           show: false,
-        }
-      },
-  mixins: [dataMixin]
+
+  data: () => ({
+      date: ''
+  }),
+  computed: {
+      favorites() {
+          return this.$store.getters.favorites
+      }
+  }
+ 
 }
 </script>
 
 <style scoped>
-.image {
-    width: 99.5%;
-    margin: 0 auto;
-   
+h1 {
+    color: white;
 }
-
-.back{
-  background-color: rgba(222,222,222,0.1);
-}
-
 </style>

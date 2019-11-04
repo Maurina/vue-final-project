@@ -27,7 +27,7 @@ export default {
     'app-footer' : footer,
    
   },
- 
+
 }
 </script>
 

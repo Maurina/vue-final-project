@@ -39,6 +39,13 @@
             </router-link>
           </v-list-item-title>
         </v-list-item>
+             <v-list-item>
+          <v-list-item-title> 
+            <router-link to="/favorites" tag="li" active-class="active">
+              <a class= "black--text">Favorites</a>
+            </router-link>
+          </v-list-item-title>
+        </v-list-item>
         </v-list>
       </v-menu>
  
