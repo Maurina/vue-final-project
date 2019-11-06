@@ -1,8 +1,8 @@
 <template>
     <v-container>
-        <h1>Sort By: </h1>
+       
 
-        <v-btn >Date Created</v-btn>
+        <!--<v-btn >Date Created</v-btn> -->
      <v-row>
        <v-col col="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
        
