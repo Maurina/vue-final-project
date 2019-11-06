@@ -6,16 +6,25 @@
             <v-col class="text-center">
                 <h1> Nasa's Image of the day </h1>
                 <h3>Choose a date from June 16, 1995 to present</h3>
-                <p>yyyy-mm-dd format *dashes required</p>
-                <v-form v-on:submit.prevent="getResult(date)" class="formDate">
-                    <input type="text" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd"  color="white"> 
+              
+             <v-form v-on:submit.prevent="getResult(date)" class="formDate">
+                 
+                    <input type="hidden" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd" minlength="10" maxlength="10" > 
+                     <v-date-picker v-model="date" no-title scrollable >
+         
+            
+          </v-date-picker>
+         
                     <v-btn type="submit" class="submitBtn" color="white black--text" >Get Image</v-btn>
                 </v-form>
+          
+         
             </v-col>
+
+
+
             <v-col>
-             
-       
-            <v-card class="mx-auto" max-width="400"> 
+             <v-card class="mx-auto" max-width="400"> 
               
                     <v-img 
                         class="white--text align-end"
@@ -43,9 +52,6 @@ export default {
         return{
             show: true,
             dayPicture: '',
-            month: '',
-            year: '',
-            day: '',
             date: new Date().toISOString().substr(0,10),
             dateRules: [
                 v => !!v || 'Dashes are required',
@@ -92,8 +98,12 @@ img {
    
 }
 
-h1, h2, p{
+h1, h3 {
     color: white;
+    padding-bottom: 2%;
+}
+.submitBtn{
+    margin-left: 2%;
 }
 </style>
 
