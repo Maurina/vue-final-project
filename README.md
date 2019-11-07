@@ -1,6 +1,6 @@
 # Nasa API Vue Project
 
-[Netlify](https://romantic-hopper-6a4799.netlify.com/).
+See [Netlify](https://romantic-hopper-6a4799.netlify.com/).
 
 ### 1. Effectively use conditional logic and JavaScript array methods to render large lists.
 
@@ -20,7 +20,7 @@
 ### 8. Use a mix of animations and transitions to enhance some aspect of your project
 
 ### 9. Connect to a server using HTTP and display retrieved data.
-   [nasaDay.vue](https://github.com/Maurina/vue-final-project/blob/master/src/components/nasaDay.vue).
+[nasaDay.vue](https://github.com/Maurina/vue-final-project/blob/master/src/components/nasaDay.vue).
 
 
 ### 10. Provide at least 3 different routes with navigation between them using vue-router.
