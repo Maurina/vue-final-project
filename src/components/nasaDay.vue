@@ -2,42 +2,23 @@
 <div>
     <v-container>
         <v-row>
-        <!-- 2019-09-18_3790 -->
             <v-col class="text-center">
                 <h1> Nasa's Image of the day </h1>
                 <h3>Choose a date from June 16, 1995 to present</h3>
-              
-             <v-form v-on:submit.prevent="getResult(date)" class="formDate">
-                 
+                <v-form v-on:submit.prevent="getResult(date)" class="formDate">
                     <input type="hidden" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd" minlength="10" maxlength="10" > 
-                     <v-date-picker v-model="date" no-title scrollable >
-         
-            
-          </v-date-picker>
-         
+                    <v-date-picker v-model="date" no-title scrollable ></v-date-picker>
                     <v-btn type="submit" class="submitBtn" color="white black--text" >Get Image</v-btn>
                 </v-form>
-          
-         
             </v-col>
 
-
-
             <v-col>
-             <v-card class="mx-auto" max-width="400"> 
-              
-                    <v-img 
-                        class="white--text align-end"
-                        v-bind:src="url"
-                        v-if="show"
-                        >
-               
-                     <v-card-title class="title">{{ title }} </v-card-title>
+                <v-card class="mx-auto" max-width="400"> 
+                    <v-img class="white--text align-end" v-bind:src="url" v-if="show">
+                        <v-card-title class="title">{{ title }} </v-card-title>
                     </v-img>
-           
-                <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
-            </v-card>
-     
+                    <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
+                </v-card>
             </v-col>
         </v-row>
     </v-container>    
@@ -105,5 +86,7 @@ h1, h3 {
 .submitBtn{
     margin-left: 2%;
 }
+
+
 </style>
 

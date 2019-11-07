@@ -1,19 +1,13 @@
 <template>
-  <div class="home">
-         <app-header></app-header>
-        
-          <div class="frame">
-            <app-nasaData></app-nasaData>
-          </div><!--frame-->
-      
-
-
-     <app-footer></app-footer>
+  <div>
+    <div class="frame">
+      <app-nasaData></app-nasaData>
+    </div><!--frame-->
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import header from '../components/header'
 import footer from '../components/footer'
 import nasaData from '../components/nasaData'
 
@@ -22,7 +16,6 @@ import nasaData from '../components/nasaData'
 export default {
   name: 'App',
   components: {
-    'app-header' : header,
     'app-nasaData' : nasaData,
     'app-footer' : footer,
    
