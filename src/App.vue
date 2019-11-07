@@ -36,11 +36,11 @@ export default {
 
 @keyframes slide-in{
   from{
-    transform: translateX(-1900px);
+    transform: translateY(500px);
     opacity: 0;  
     }
     to{
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
 }
