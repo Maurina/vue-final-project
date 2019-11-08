@@ -1,6 +1,5 @@
 <template>
     <div class="frame">
-        <app-favorites></app-favorites>
  <v-form
       ref="form"
       v-model="valid"
@@ -20,14 +19,18 @@
         label="E-mail"
         required
       ></v-text-field>
-  
-      <v-select
-        v-model="select"
-        :items="items"
-        :rules="[v => !!v || 'Item is required']"
-        label="Item"
-        required
-      ></v-select>
+  <v-text-field
+            v-model="password"
+            :append-icon="show1 ? 'visibility' : 'visibility_off'"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'password'"
+            name="input-10-1"
+            label="Password"
+            hint="At least 8 characters"
+            counter
+            @click:append="show1 = !show1"
+          ></v-text-field>
+ 
   
       <v-checkbox
         v-model="checkbox"
@@ -40,9 +43,10 @@
         :disabled="!valid"
         color="success"
         class="mr-4"
-        @click="validate"
+        @click="submit"
+        type="submit"
       >
-        Validate
+        submit
       </v-btn>
 
   
@@ -55,15 +59,18 @@
 </template>
 
 <script>
-import footer from '../components/footer'
-import favoriteData from '../components/favoriteData.vue'
+import axios from 'axios'
+import { validationMixin } from 'vuelidate'
+import { required, maxLength, email, sameAs } from 'vuelidate/lib/validators'
 
- import { validationMixin } from 'vuelidate'
-  import { required, maxLength, email } from 'vuelidate/lib/validators'
+import footer from '../components/footer'
 
 export default {
+    components: {
+    'app-footer' : footer,
+  },
 data: () => ({
-    valid: true,
+   valid: true,
     name: '',
     nameRules: [
       v => !!v || 'Name is required',
@@ -74,20 +81,33 @@ data: () => ({
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
-    select: null,
-    items: [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4',
-    ],
+    show1: false,
+    password: '',
+        rules: {
+          required: value => !!value || 'Required.',
+          min: v => v.length >= 8 || 'Min 8 characters',
+          emailMatch: () => ('The email and password you entered don\'t match'),
+        },
+      
     checkbox: false,
   }),
+
   methods: {
+    submit(){
+      const formData = {
+        name: this.name,
+        email: this.email,
+        password: this.password
+      }
+      axios.post('https://vue-nasa.firebaseio.com/users.json', formData)
+      .then(res => console.log(res))
+      .catch(error => console.log(error))
+    },
     validate () {
       if (this.$refs.form.validate()) {
         this.snackbar = true
       }
+      
     },
  
   },

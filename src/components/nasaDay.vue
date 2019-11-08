@@ -52,7 +52,6 @@ export default {
         getResult(date) {
             return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
             (response =>{
-                console.log(response.data)
                 this.explanation = response.data.explanation
                 this.date = response.data.date
                 this.url = response.data.url
