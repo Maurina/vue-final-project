@@ -1,12 +1,12 @@
 <template>
     <div class="stars">
-       <transition name="fade" appear >
-                 
-              <q class="quote" :v-for="quote in quotes"  > {{ quote }}</q>
-       </transition>
        <transition name="fadeOut" appear >
               <q class="quote" > We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
             </transition>
+         
+          <transition name="fadeOut" appear>
+ <img src="../assets/images/earthLights.jpg" alt="Orians Belt">
+          </transition>
     </div>
 </template>
 
@@ -33,6 +33,9 @@ export default {
   justify-content: center;
 }
 
+img{
+  width: 100%;
+}
 /* animation */
 .fade-enter{
     opacity: 0;
@@ -60,4 +63,6 @@ export default {
   transition: opacity 5s;
   opacity: 0;
 }
+
+
 </style>

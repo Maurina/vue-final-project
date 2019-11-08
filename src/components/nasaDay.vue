@@ -13,12 +13,16 @@
             </v-col>
 
             <v-col>
+                 
                 <v-card class="mx-auto" max-width="400"> 
+                       
                     <v-img class="white--text align-end" v-bind:src="url" v-if="show">
                         <v-card-title class="title">{{ title }} </v-card-title>
                     </v-img>
+                     
                     <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
                 </v-card>
+            
             </v-col>
         </v-row>
     </v-container>    
@@ -86,7 +90,6 @@ h1, h3 {
 .submitBtn{
     margin-left: 2%;
 }
-
 
 </style>
 

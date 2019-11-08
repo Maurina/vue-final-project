@@ -1,6 +1,7 @@
 # Nasa API Vue Project
 
-See [Netlify](https://romantic-hopper-6a4799.netlify.com/).
+### Netlify
+[Netlify](https://romantic-hopper-6a4799.netlify.com/).
 
 ### 1. Effectively use conditional logic and JavaScript array methods to render large lists.
 
