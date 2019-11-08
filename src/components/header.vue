@@ -46,6 +46,13 @@
             </router-link>
           </v-list-item-title>
         </v-list-item>
+         <v-list-item>
+          <v-list-item-title>
+            <router-link to="/signIn" tag="li" active-class="active" exact>
+              <a class= "black--text">Sign In</a>
+            </router-link>
+          </v-list-item-title>
+        </v-list-item>
         </v-list>
       </v-menu>
  
