@@ -43,8 +43,9 @@
         :disabled="!valid"
         color="success"
         class="mr-4"
-        @click="submit"
+      
         type="submit"
+        v-on:submit="onSubmit(formData)"
       >
         submit
       </v-btn>
@@ -93,12 +94,13 @@ data: () => ({
   }),
 
   methods: {
-    submit(){
+    onSubmit(){
       const formData = {
         name: this.name,
         email: this.email,
         password: this.password
       }
+      console.log(formData)
       axios.post('https://vue-nasa.firebaseio.com/users.json', formData)
       .then(res => console.log(res))
       .catch(error => console.log(error))
