@@ -1,52 +1,48 @@
 <template>
     <div class="frame">
- <v-form
-      ref="form"
-      v-model="valid"
-      lazy-validation
-      @submit.prevent="onSubmit"
-      class="form"
-    >
-      <v-text-field
-        v-model="name"
-        :counter="10"
-        :rules="nameRules"
-        label="Name"
-        required
-      ></v-text-field>
+        <v-form
+            ref="form"
+            v-model="valid"
+            lazy-validation
+            @submit.prevent="onSubmit"
+            class="form"
+        >
+            <v-text-field
+                v-model="name"
+                :counter="10"
+                :rules="nameRules"
+                label="Name"
+                required
+            ></v-text-field>
+    
+            <v-text-field
+                v-model="email"
+                :rules="emailRules"
+                label="E-mail"
+                required
+            ></v-text-field>
+            <v-text-field
+                v-model="password"
+                :append-icon="show1 ? 'visibility' : 'visibility_off'"
+                :rules="[rules.required, rules.min]"
+                :type="show1 ? 'text' : 'password'"
+                name="input-10-1"
+                label="Password"
+                hint="At least 8 characters"
+                counter
+                @click:append="show1 = !show1"
+            ></v-text-field>
   
-      <v-text-field
-        v-model="email"
-        :rules="emailRules"
-        label="E-mail"
-        required
-      ></v-text-field>
-  <v-text-field
-            v-model="password"
-            :append-icon="show1 ? 'visibility' : 'visibility_off'"
-            :rules="[rules.required, rules.min]"
-            :type="show1 ? 'text' : 'password'"
-            name="input-10-1"
-            label="Password"
-            hint="At least 8 characters"
-            counter
-            @click:append="show1 = !show1"
-          ></v-text-field>
-  
-      <v-btn
-        :disabled="!valid"
-        color="black white--text"
-        class="mr-4"
-        type="submit"
-        @click="onSubmit(formData)"
-      >
-        Submit
-      </v-btn>
-
-  
-  
-    </v-form>
-
+            <v-btn
+                :disabled="!valid"
+                color="black white--text"
+                class="mr-4"
+                type="submit"
+                @click="onSubmit(formData)"
+            >
+            Submit
+            </v-btn>
+        </v-form>
     </div>
 </template>
 

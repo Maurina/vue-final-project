@@ -1,12 +1,12 @@
 <template>
     <div class="stars">
        <transition name="fadeOut" appear >
-              <q class="quote" > We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
-            </transition>
+        <q class="quote" > We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
+      </transition>
          
-          <transition name="fadeOut" appear>
- <img src="../assets/images/earthLights.jpg" alt="Orians Belt">
-          </transition>
+      <transition name="fadeOut" appear>
+        <img src="../assets/images/earthLights.jpg" alt="Orians Belt">
+      </transition>
     </div>
 </template>
 
