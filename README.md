@@ -31,6 +31,7 @@
 [router.js](https://github.com/Maurina/vue-final-project/blob/master/src/router.js)
 
 ### 11. Manage your application's state using vuex.
+[store.js](https://github.com/Maurina/vue-final-project/blob/master/src/store.js)
 
 ### 12. Structure, document, and deploy your final project code according to common industry practices.
 
