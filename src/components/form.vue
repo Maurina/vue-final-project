@@ -32,20 +32,11 @@
             counter
             @click:append="show1 = !show1"
           ></v-text-field>
- 
-  
-      <v-checkbox
-        v-model="checkbox"
-        :rules="[v => !!v || 'You must agree to continue!']"
-        label="Do you agree?"
-        required
-      ></v-checkbox>
   
       <v-btn
         :disabled="!valid"
-        color="success"
+        color="black white--text"
         class="mr-4"
-      
         type="submit"
         @click="onSubmit(formData)"
       >
@@ -100,6 +91,9 @@ data: () => ({
         password: this.password
       }
       console.log(formData)
+      this.$store.dispatch('userLogIn', {
+          name: this.name
+      })
       axios.post('https://vue-nasa.firebaseio.com/users.json', formData)
       .then(res => console.log(res))
       .catch(error => console.log(error))
