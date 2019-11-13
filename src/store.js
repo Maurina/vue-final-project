@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {
-      name: ''
+      name: '',
+      date: new Date().toISOString().substr(0,10),
     }
   },
   getters: {
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     },
     userName (state) {
       return state.user.name
+    },
+    userDate(state){
+      return state.user.date
     }
   },
   mutations: {

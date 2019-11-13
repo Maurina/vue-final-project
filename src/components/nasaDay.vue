@@ -7,7 +7,7 @@
                 <h3>Choose a date from June 16, 1995 to present</h3>
                 <v-form v-on:submit.prevent="getResult(date)" class="formDate">
                     <input type="hidden" v-model="date" :rules="dateRules" required placeholder="yyyy-mm-dd" minlength="10" maxlength="10" > 
-                    <v-date-picker v-model="date" no-title scrollable ></v-date-picker>
+                    <v-date-picker v-model="date" no-title scrollable color="black" min="1995-06-16"></v-date-picker>
                     <v-btn type="submit" class="submitBtn" color="white black--text" >Get Image</v-btn>
                 </v-form>
             </v-col>
@@ -33,11 +33,16 @@
 <script>
 import axios from 'axios'
 export default {
+     computed:{
+        userDate(){
+        return this.$store.getters.userDate
+        }
+     },
     data: () =>{
         return{
             show: true,
             dayPicture: '',
-            date: new Date().toISOString().substr(0,10),
+            date: '',
             dateRules: [
                 v => !!v || 'Dashes are required',
                 v => /.+-.+-/.test(v) || 'Dashes mush be used'

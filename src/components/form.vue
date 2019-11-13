@@ -32,11 +32,20 @@
                 counter
                 @click:append="show1 = !show1"
             ></v-text-field>
-  
+               <h3>Choose your favorite day from June 16, 1995 to present</h3>
+               <v-date-picker 
+                  v-model="date" 
+                  scrollable 
+                  color="black" 
+                  no-title
+                  min="1995-06-16"
+      
+               ></v-date-picker>
+               
             <v-btn
                 :disabled="!valid"
                 color="black white--text"
-                class="mr-4"
+                class="mr-4 btn"
                 type="submit"
                 @click="onSubmit(formData)"
             >
@@ -74,8 +83,7 @@ data: () => ({
           min: v => v.length >= 8 || 'Min 8 characters',
           emailMatch: () => ('The email and password you entered don\'t match'),
         },
-      
-    checkbox: false,
+    date: '',
     formData: ''
   }),
 
@@ -84,11 +92,13 @@ data: () => ({
       const formData = {
         name: this.name,
         email: this.email,
-        password: this.password
+        password: this.password,
+        date: this.date
       }
       console.log(formData)
       this.$store.dispatch('userLogIn', {
-          name: this.name
+          name: this.name,
+          date: this.date
       })
       axios.post('https://vue-nasa.firebaseio.com/users.json', formData)
       .then(res => console.log(res))
@@ -112,5 +122,11 @@ data: () => ({
     margin: 0 auto;
     padding: 2%;
 }
+h3{
+  color: white;
+}
 
+.btn{
+  margin-left: 2%;
+}
 </style>
