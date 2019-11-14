@@ -26,7 +26,7 @@ export default {
    
   },
   data: () => ({
-      date: ''
+         date: '',
   }),
   computed:{
     userName(){
