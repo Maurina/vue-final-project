@@ -2,7 +2,9 @@
 <div>
     <v-container>
         <v-row>
-          
+           <h1>Welcome</h1>
+      <h2>  {{ userName }} </h2>
+      <h2 v-bind:date> {{ userDate }} </h2>
 
             <v-col>
                  
@@ -23,39 +25,37 @@
 </template>
 
 <script>
-import axios from 'axios'
+//import axios from 'axios'
 export default {
-     computed:{
-        userDate(){
-        return this.$store.getters.userDate
-        }
-     },
+    computed:{
+    userName(){
+      return this.$store.getters.userName
+    },
+    userDate(){
+      return this.$store.getters.userDate
+    }
+  },
     data: () =>{
         return{
             show: true,
-            dayPicture: '',
-            date: this.$store.getters.userDate,
-            dateRules: [
-                v => !!v || 'Dashes are required',
-                v => /.+-.+-/.test(v) || 'Dashes mush be used'
-            ],
+            date: '',
             explanation:'',
             url:'',
-            title: ''
-            
+            title: '',
+            name:''
         }
-    },
-    methods: {
-        getResult(date) {
-            return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
-            (response =>{
-                this.explanation = response.data.explanation
-                this.date = response.data.date
-                this.url = response.data.url
-                this.title = response.data.title
-            }).catch(error => console.log(error))
-        }
-    } 
+    }
+   // methods: {
+     //   getResult(date) {
+       //     return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
+         //   (response =>{
+           //     this.explanation = response.data.explanation
+             //   this.date = response.data.date
+               // this.url = response.data.url
+               // this.title = response.data.title
+            //}).catch(error => console.log(error))
+       // }
+   // } 
 }
 </script>
 
@@ -72,6 +72,7 @@ input[type="text"], textarea {
 }
 h2{
     text-align: center;
+    color:white;
 }
 img {
     width: 100%;

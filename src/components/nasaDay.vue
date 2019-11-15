@@ -33,20 +33,11 @@
 <script>
 import axios from 'axios'
 export default {
-     computed:{
-        userDate(){
-        return this.$store.getters.userDate
-        }
-     },
     data: () =>{
         return{
             show: true,
             dayPicture: '',
             date: '',
-            dateRules: [
-                v => !!v || 'Dashes are required',
-                v => /.+-.+-/.test(v) || 'Dashes mush be used'
-            ],
             explanation:'',
             url:'',
             title: ''

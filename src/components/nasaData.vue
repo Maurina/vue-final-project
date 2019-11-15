@@ -5,7 +5,7 @@
      <v-row>
        <v-col col="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
        
-         <v-card class="mx-auto" max-width="300" outlinded :elevation="14" >
+         <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
             <v-img class="image" v-bind:src="nasaDataSet.image"> </v-img>
             
@@ -17,7 +17,8 @@
                 <v-card-text> {{ nasaDataSet.description }} </v-card-text>
                 <v-card-subtitle>   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
-                  <v-btn  color="black white--text" > Add to favorites </v-btn>
+                  <v-btn  color="black white--text"   type="submit"
+                @click="onSubmit(favoriteData)"> Add to favorites </v-btn>
                 </v-card-actions>
               
         </v-expansion-panel-content>
@@ -39,22 +40,36 @@ export default {
            show: false,
         }
       },
-  mixins: [dataMixin]
+  mixins: [dataMixin],
+  methods: {
+    onSubmit(){
+      const favoriteData = {
+        title: '',
+        image: '',
+        dateCreated: ''
+      }
+      console.log(favoriteData)
+      this.$store.dispatch('nasaFavorite', {
+          title: this.title,
+          image: this.image,
+          dateCreated: this.dateCreated
+      })
 }
+
 </script>
 
 <style scoped>
 .image {
     width: 99.5%;
     margin: 0 auto;
-   
+ 
 }
 
 .back{
   background-color: rgba(222,222,222,0.1);
 }
 .spacing{
-  height: 1px;
+  height: 1.5px;
 }
 .textStyle{
   font-weight: bold;

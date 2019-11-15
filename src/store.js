@@ -8,8 +8,9 @@ export default new Vuex.Store({
   state: {
     user: {
       name: '',
-      date: new Date().toISOString().substr(0,10),
-    }
+      date: new Date().toISOString().substr(0, 10)
+    },
+    favoriteInfo: []
   },
   getters: {
     user (state) {
@@ -18,19 +19,34 @@ export default new Vuex.Store({
     userName (state) {
       return state.user.name
     },
-    userDate(state){
+    userDate (state) {
       return state.user.date
+    },
+    favoriteInfosTitle (state) {
+      return state.favoriteInfo.title
+    },
+    favoriteInfoImage (state) {
+      return state.favoriteInfo.image
+    },
+    favoriteInfo (state) {
+      return state.favoriteInfo.dateCreated
     }
   },
   mutations: {
     storeUser (state, user) {
       return (state.user = user)
+    },
+    newData (state, favoriteInfo) {
+      return (state.favoriteInfo = favoriteInfo)
     }
   },
   actions: {
     userLogIn ({ commit }, user) {
       commit('storeUser', user)
-      router.replace('/')
+      router.replace('/favorites')
+    },
+    nasaFavorite ({ commit }, favoriteInfo) {
+      commit('nasaFavorite', favoriteInfo)
     }
   }
 
