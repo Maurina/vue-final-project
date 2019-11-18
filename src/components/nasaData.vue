@@ -18,7 +18,7 @@
                 <v-card-subtitle>   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
                   <v-btn  color="black white--text"   type="submit"
-                @click="onSubmit(favoriteData)"> Add to favorites </v-btn>
+                > Add to favorites </v-btn>
                 </v-card-actions>
               
         </v-expansion-panel-content>
@@ -40,20 +40,10 @@ export default {
            show: false,
         }
       },
-  mixins: [dataMixin],
-  methods: {
-    onSubmit(){
-      const favoriteData = {
-        title: '',
-        image: '',
-        dateCreated: ''
-      }
-      console.log(favoriteData)
-      this.$store.dispatch('nasaFavorite', {
-          title: this.title,
-          image: this.image,
-          dateCreated: this.dateCreated
-      })
+  mixins: [dataMixin]
+
+ 
+
 }
 
 </script>
