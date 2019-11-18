@@ -3,7 +3,7 @@ export const nasaDataSets = [
   {
     title: 'Earth and Moon',
     description: 'During its flight, NASA\u2019s Galileo spacecraft returned images of the Earth and Moon. Separate images of the Earth and Moon were combined to generate this view. ',
-    image: 'http://images-assets.nasa.gov/image/PIA00342/PIA00342~orig.jpg',
+    image:'./images/PIA00342_orig.jpg',
     metadata: 'http://images-assets.nasa.gov/image/PIA00342/metadata.json',
     source: 'NASA/JPL/USGS',
     dateCreated: '1998:06:04 18:10:28',
