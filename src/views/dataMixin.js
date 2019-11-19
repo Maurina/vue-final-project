@@ -1,13 +1,12 @@
 /* eslint-disable indent */
-import { nasaDataSets } from '../assets/nasa'
-
+import { nasaDataSets } from '../nasa.js'
 export const dataMixin = {
   data () {
     return {
       nasaDataSets
     }
-  },
-  computed: {
+  }
+ /* computed: {
     earthSort () {
         return this.nasaDataSets.map(earth => {
             return earth.filter(function (item) {
@@ -15,5 +14,5 @@ export const dataMixin = {
             })
         })
     }
-  }
+  } */
 }

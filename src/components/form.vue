@@ -86,7 +86,6 @@ data: () => ({
     date: '',
     formData: ''
   }),
-
   methods: {
     onSubmit(){
       const formData = {
@@ -108,9 +107,7 @@ data: () => ({
       if (this.$refs.form.validate()) {
         this.snackbar = true
       }
-      
     },
- 
   },
 };
 </script>
@@ -125,7 +122,6 @@ data: () => ({
 h3{
   color: white;
 }
-
 .btn{
   margin-left: 2%;
 }

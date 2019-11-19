@@ -25,7 +25,12 @@
             
             </v-col>
         </v-row>
-    </v-container>    
+    <v-row class="spacer">
+        <v-col>
+        </v-col>
+    </v-row>
+    </v-container>   
+     
 
 </div>   
 </template>
@@ -65,9 +70,7 @@ input{
 }
 
 input[type="text"], textarea {
-
-  background-color : white; 
-
+    background-color : white; 
 }
 h2{
     text-align: center;
@@ -85,6 +88,8 @@ h1, h3 {
 .submitBtn{
     margin-left: 2%;
 }
-
+.spacer{
+    height: 100px;
+}
 </style>
 
