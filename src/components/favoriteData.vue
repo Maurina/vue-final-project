@@ -1,18 +1,24 @@
 <<template>
-  
+  <div>
+      <h1>Welcome :  {{ userName }}  </h1>
+
+      <h2> {{ userDate }} </h2>
+
+      <div class="spacer"></div>
+    </div>
 </template>
 
         
 
 <script>
-import axios from 'axios'
+
 export default {
    computed:{
-       userDate(){
+        userDate(){
            return this.$store.getters.userDate
        },
        userName(){
-           return this.$store.getter.userName
+           return this.$store.getters.userName
        }
    },
    data: () =>{
@@ -28,5 +34,13 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+.spacer{
+    height: 500px;
+}
 </style>

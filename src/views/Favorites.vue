@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="frame">
-      <app-favorite></app-favorite>
+      <app-favoriteData></app-favoriteData>
     </div><!--frame-->
     <app-footer></app-footer>
   </div>
@@ -9,14 +9,14 @@
 
 <script>
 import footer from '../components/footer'
-import favoriteData from '../components/favoriteData.vue'
+import favoriteData from '../components/favoriteData'
 
 
 
 export default {
     name: 'App',
   components: {
-    'app-favorite': favoriteData,
+    'app-favoriteData': favoriteData,
     'app-footer' : footer,
    
   },
@@ -31,6 +31,5 @@ data: () => ({
 .frame{
   padding: 2%;
   background:#000 url(../assets/images/stars.png) repeat top center;
-  height: 100%;
 }
 </style>

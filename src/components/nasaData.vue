@@ -5,22 +5,23 @@
      <v-row>
        <v-col col="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
        
-         <v-card class="mx-auto card" max-width="300">
+         <v-card class="mx-auto card" max-width="300" >
            <div class="spacing"></div>
-            <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`"> </v-img>
+        
+              <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`"> </v-img>
             
               <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header class="textStyle">{{ nasaDataSet.title }}</v-expansion-panel-header>
+        <v-expansion-panel-header class="textStyle" >{{ nasaDataSet.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
-           
-                <v-card-text> {{ nasaDataSet.description }} </v-card-text>
+  
+                <v-card-text v-bind:description="nasaDataSet.description"> {{ nasaDataSet.description }} </v-card-text>
                 <v-card-subtitle>   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
-                  <v-btn  color="black white--text"   type="submit"
+                  <v-btn  color="black white--text"   type="submit"  @click="onSubmit"
                 > Add to favorites </v-btn>
                 </v-card-actions>
-              
+   
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -31,15 +32,37 @@
 </template>
 
 <script>
-import { dataMixin } from '../views/dataMixin'
+//import { dataMixin } from '../views/dataMixin'
+import { nasaDataSets } from '../nasa.js'
 
 export default {
       data () {
         return{
            show: false,
+           favoriteArray: [],
+           title:  '',
+           description: '',
+           dateCreated: '',
+           image: '',
+           nasaDataSets: nasaDataSets
         }
       },
-  mixins: [dataMixin]
+  //mixins: [dataMixin],
+    methods: {
+    
+    onSubmit(){
+      let favoriteObject = nasaDataSets
+    
+      console.log(nasaDataSets)
+      console.log(favoriteObject)
+      this.$store.dispatch('favoriteObject', {
+        title: this.title,
+        image: this.image,
+        description: this.description,
+        dateCreated: this.dateCreated
+      })
+      }
+    }
 }
 
 </script>

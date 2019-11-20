@@ -7,6 +7,7 @@
       <transition name="fadeOut" appear>
         <img src="../assets/images/earthLights.jpg" alt="Orians Belt">
       </transition>
+      <div class="spacer"></div>
     </div>
 </template>
 
@@ -63,6 +64,7 @@ img{
   transition: opacity 5s;
   opacity: 0;
 }
-
-
+.spacer{
+    height: 200px;
+}
 </style>

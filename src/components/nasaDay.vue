@@ -89,7 +89,7 @@ h1, h3 {
     margin-left: 2%;
 }
 .spacer{
-    height: 100px;
+    height: 200px;
 }
 </style>
 
