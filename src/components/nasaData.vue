@@ -7,7 +7,7 @@
        
          <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
-            <v-img class="image" v-bind:src="nasaDataSet.image"> </v-img>
+            <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`"> </v-img>
             
               <v-expansion-panels>
       <v-expansion-panel>
