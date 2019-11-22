@@ -5,10 +5,9 @@
      <v-row>
        <v-col col="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
        
-         <v-card class="mx-auto card" max-width="300" >
+         <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
-        
-              <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`"> </v-img>
+            <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`"> </v-img>
             
               <v-expansion-panels>
       <v-expansion-panel>
@@ -56,7 +55,7 @@ export default {
       console.log(nasaDataSets)
       console.log(favoriteObject)
       this.$store.dispatch('favoriteObject', {
-        title: this.title,
+        title: this.nasaDataSets[0].title,
         image: this.image,
         description: this.description,
         dateCreated: this.dateCreated

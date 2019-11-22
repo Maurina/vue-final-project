@@ -4,6 +4,8 @@
 
       <h2> {{ userDate }} </h2>
 
+      <h2> {{ favoriteList }} </h2>
+
       <div class="spacer"></div>
     </div>
 </template>
@@ -19,7 +21,10 @@ export default {
        },
        userName(){
            return this.$store.getters.userName
-       }
+       },
+        favoritesList(){
+            return this.$store.getters.favoritesList
+        }
    },
    data: () =>{
    return{
