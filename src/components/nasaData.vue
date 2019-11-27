@@ -11,39 +11,57 @@
             
               <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header class="textStyle">{{ nasaDataSet.title }}</v-expansion-panel-header>
+        <v-expansion-panel-header class="textStyle" >{{ nasaDataSet.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
-           
-                <v-card-text> {{ nasaDataSet.description }} </v-card-text>
+  
+                <v-card-text v-bind:description="nasaDataSet.description"> {{ nasaDataSet.description }} </v-card-text>
                 <v-card-subtitle>   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
-                  <v-btn  color="black white--text"   type="submit"
+                  <v-btn  color="black white--text"   type="submit"  @click="onSubmit"
                 > Add to favorites </v-btn>
                 </v-card-actions>
-              
+   
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-           
-         </v-card>
+       </v-card>
       </v-col>
      </v-row>
     </v-container>
 </template>
 
 <script>
-import { dataMixin } from '../views/dataMixin'
+//import { dataMixin } from '../views/dataMixin'
+import { nasaDataSets } from '../nasa.js'
 
 export default {
       data () {
         return{
            show: false,
+           favoriteArray: [],
+           title:  '',
+           description: '',
+           dateCreated: '',
+           image: '',
+           nasaDataSets: nasaDataSets
         }
       },
-  mixins: [dataMixin]
-
- 
-
+  //mixins: [dataMixin],
+    methods: {
+    
+    onSubmit(){
+      let favoriteObject = nasaDataSets
+    
+      console.log(nasaDataSets)
+      console.log(favoriteObject)
+      this.$store.dispatch('favoriteObject', {
+        title: this.nasaDataSets[0].title,
+        image: this.image,
+        description: this.description,
+        dateCreated: this.dateCreated
+      })
+      }
+    }
 }
 
 </script>
@@ -52,9 +70,7 @@ export default {
 .image {
     width: 99.5%;
     margin: 0 auto;
- 
 }
-
 .back{
   background-color: rgba(222,222,222,0.1);
 }

@@ -6,8 +6,8 @@ export const dataMixin = {
     return {
       nasaDataSets
     }
-  },
-  computed: {
+  }
+ /* computed: {
     earthSort () {
         return this.nasaDataSets.map(earth => {
             /* return earth.filter(function (item) {
@@ -15,5 +15,5 @@ export const dataMixin = {
             }) */
         })
     }
-  }
+  } */
 }

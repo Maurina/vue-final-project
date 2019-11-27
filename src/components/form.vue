@@ -23,7 +23,7 @@
             ></v-text-field>
             <v-text-field
                 v-model="password"
-                :append-icon="show1 ? 'visibility' : 'visibility_off'"
+           
                 :rules="[rules.required, rules.min]"
                 :type="show1 ? 'text' : 'password'"
                 name="input-10-1"
@@ -52,6 +52,7 @@
             Submit
             </v-btn>
         </v-form>
+        <div class="spacer"></div>
     </div>
 </template>
 
@@ -86,7 +87,6 @@ data: () => ({
     date: '',
     formData: ''
   }),
-
   methods: {
     onSubmit(){
       const formData = {
@@ -108,9 +108,7 @@ data: () => ({
       if (this.$refs.form.validate()) {
         this.snackbar = true
       }
-      
     },
- 
   },
 };
 </script>
@@ -125,8 +123,10 @@ data: () => ({
 h3{
   color: white;
 }
-
 .btn{
   margin-left: 2%;
+}
+.spacer{
+    height: 200px;
 }
 </style>

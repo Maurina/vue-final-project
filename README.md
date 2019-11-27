@@ -21,7 +21,7 @@
 [SignIn.vue](https://github.com/Maurina/vue-final-project/blob/master/src/components/form.vue)
 
 ### 7. Create a custom directive and use it on a least one of your components.
-
+[main.js](https://github.com/Maurina/vue-final-project/blob/master/src/main.js)
 ### 8. Use a mix of animations and transitions to enhance some aspect of your project.
 [Home.vue](https://github.com/Mauirna/vue-final-project/blob/master/src/views/Home.vue)
 

@@ -1,12 +1,13 @@
 <template>
     <div class="stars">
        <transition name="fadeOut" appear >
-        <q class="quote" > We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
+        <q class="quote" v-hightlight.delayed> We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
       </transition>
          
       <transition name="fadeOut" appear>
         <img src="../assets/images/earthLights.jpg" alt="Orians Belt">
       </transition>
+      <div class="spacer"></div>
     </div>
 </template>
 
@@ -21,7 +22,7 @@ export default {
           
         }
   
-}
+},
 }
 </script>
 
@@ -63,6 +64,7 @@ img{
   transition: opacity 5s;
   opacity: 0;
 }
-
-
+.spacer{
+    height: 200px;
+}
 </style>
