@@ -1,7 +1,7 @@
 <template>
     <div class="stars">
        <transition name="fadeOut" appear >
-        <q class="quote" > We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
+        <q class="quote" v-hightlight.delayed> We are at a point in history where a proper attention to space, and especially near space, may be absolutely crucial in bringing the world together. - Margaret Mead</q>
       </transition>
          
       <transition name="fadeOut" appear>
@@ -22,7 +22,7 @@ export default {
           
         }
   
-}
+},
 }
 </script>
 

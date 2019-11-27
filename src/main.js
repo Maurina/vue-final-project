@@ -5,6 +5,11 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import Vuelidate from 'vuelidate'
 
+Vue.directive('hightlight', {
+  bind (el, binding, vnode) {
+    el.style.color = 'gold'
+  }
+})
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 
