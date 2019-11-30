@@ -26,7 +26,7 @@ export default {
 
 <style scoped>
 .frame{
- background:#000 url(../assets/images/stars.png) repeat top center;
+ background:#000 url(/assets/images/stars.png) repeat top center; 
 }
 
 </style>

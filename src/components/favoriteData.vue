@@ -4,9 +4,9 @@
 
       <h2> {{ userDate }} </h2>
 
-      <h2> {{ favoriteList }} </h2>
+      <h2> {{ favoriteDate }} </h2>
   <v-form v-on:submit.prevent="getResult(date)" class="formDate">
-                    <input type="hidden" v-model="userDate" :rules="dateRules" required placeholder="yyyy-mm-dd" minlength="10" maxlength="10" > 
+                    <input type="hidden" v-model="userDate" minlength="10" maxlength="10" > 
                   
                     <v-btn type="submit" class="submitBtn" color="white black--text" >Get Image</v-btn>
                 </v-form>
@@ -35,7 +35,7 @@ export default {
        userName(){
            return this.$store.getters.userName
        },
-        favoritesList(){
+        favoriteDate(){
             return this.$store.getters.favoritesList
         }
    },

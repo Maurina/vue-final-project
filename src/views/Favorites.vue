@@ -30,6 +30,6 @@ data: () => ({
 <style scoped>
 .frame{
   padding: 2%;
-  background:#000 url(../assets/images/stars.png) repeat top center;
+ background:#000 url(/assets/images/stars.png) repeat top center; 
 }
 </style>

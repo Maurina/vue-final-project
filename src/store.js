@@ -30,6 +30,9 @@ export default new Vuex.Store({
     },
     favoritesList (state) {
       return state.favoritesList.title
+    },
+    favoriteDate (state) {
+      return state.favoriteDate.date
     }
   },
   mutations: {
