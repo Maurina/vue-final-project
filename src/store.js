@@ -11,12 +11,7 @@ export default new Vuex.Store({
       name: 'Guest',
       date: new Date().toISOString().substr(0, 10)
     },
-    favoritesList: {
-      title: '',
-      image: '',
-      description: '',
-      dateCreated: ''
-    }
+    favoritesList: []
   },
   getters: {
     user (state) {

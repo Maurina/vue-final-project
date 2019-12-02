@@ -1,25 +1,25 @@
 <<template>
-  <div>
+    <div>
+    
+    
       <h1>Welcome :  {{ userName }}  </h1>
-
-      <h2> {{ userDate }} </h2>
-
-      <h2> {{ favoriteDate }} </h2>
-  <v-form v-on:submit.prevent="getResult(date)" class="formDate">
+<
+  <v-form v-on:submit.prevent="getResult(userDate)" class="formDate">
                     <input type="hidden" v-model="userDate" minlength="10" maxlength="10" > 
                   
-                    <v-btn type="submit" class="submitBtn" color="white black--text" >Get Image</v-btn>
+                    <v-btn type="submit" class="submitBtn" color="white black--text" >Favorite Date</v-btn>
                 </v-form>
-      <div class="spacer"></div>
          <v-card class="mx-auto" max-width="400"> 
                        
-                    <v-img class="white--text align-end" v-bind:src="url" v-if="show">
+                    <v-img class="white--text align-end" v-bind:src="url">
                         <v-card-title class="title">{{ title }} </v-card-title>
                     </v-img>
-                     
+                    <v-card-title> Your favorite date: {{ date }} </v-card-title>
                     <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
                 </v-card>
-            
+          
+       
+             <div class="spacer"></div>
     </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
    },
    data: () =>{
    return{
-       date: '1995-06-16',
+       date: '',
        name: '',
        explanation: '',
        url: '',
@@ -49,13 +49,14 @@ export default {
     }
    },
    methods: {
-        getResult(data) {
+        getResult(date) {
             return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
             (response =>{
                 this.explanation = response.data.explanation
                 this.date = response.data.date
                 this.url = response.data.url
                 this.title = response.data.title
+                console.log(response)
             }).catch(error => console.log(error))
         }
     } 

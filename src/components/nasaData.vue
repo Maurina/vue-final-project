@@ -7,15 +7,15 @@
        
          <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
-            <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`"> </v-img>
+            <v-img class="image" v-bind:src="`./assets/images/${nasaDataSet.image}`" > </v-img>
             
               <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header class="textStyle" >{{ nasaDataSet.title }}</v-expansion-panel-header>
+        <v-expansion-panel-header class="textStyle" :title="title" >{{ nasaDataSet.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
-  
-                <v-card-text v-bind:description="nasaDataSet.description"> {{ nasaDataSet.description }} </v-card-text>
-                <v-card-subtitle>   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
+   
+                <v-card-text :description="description"> {{ nasaDataSet.description }} </v-card-text>
+                <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
                   <v-btn  color="black white--text"   type="submit"  @click="onSubmit"
                 > Add to favorites </v-btn>
@@ -47,16 +47,24 @@ export default {
         }
       },
   //mixins: [dataMixin],
+ 
     methods: {
+      onSubmit(){
+        console.log(nasaDataSets)
+        console.log(favoriteObject)
+        let favoriteObject = {
+                title: this.title,
+                description: this.description,
+                dateCreated: this.dateCreated ,
+                image: this.image,
+                   
+            };
     
-    onSubmit(){
-      let favoriteObject = nasaDataSets
-    
-      console.log(nasaDataSets)
-      console.log(favoriteObject)
-      this.$store.dispatch('favoriteObject', {
-        title: this.nasaDataSets[0].title,
-        image: this.image,
+        console.log(nasaDataSets)
+        console.log(favoriteObject)
+        this.$store.dispatch('favoriteObject', {
+          title: this.nasaDataSets.title,
+        image: this.nasaDataSet.image,
         description: this.description,
         dateCreated: this.dateCreated
       })
