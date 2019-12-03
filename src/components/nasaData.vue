@@ -14,10 +14,10 @@
         <v-expansion-panel-header class="textStyle" :title="title" >{{ nasaDataSet.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
    
-                <v-card-text :description="description"> {{ nasaDataSet.description }} {{ index }} </v-card-text>
+                <v-card-text :description="description"> {{ nasaDataSet.description }}  </v-card-text>
                 <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
-                  <v-btn  color="black white--text"   type="submit"  @click="onSubmit"
+                  <v-btn  color="black white--text"   @click="addFavorite(index)"
                 > Add to favorites </v-btn>
                 </v-card-actions>
    
@@ -43,31 +43,21 @@ export default {
            description: '',
            dateCreated: '',
            image: '',
-       
+           nasaDataSets: nasaDataSets
         }
       },
   //mixins: [dataMixin],
- 
+
     methods: {
-      onSubmit(){
-        console.log(nasaDataSets)
-        console.log(favoriteObject)
-        let favoriteObject = {
-                title: this.title,
-                description: this.description,
-                dateCreated: this.dateCreated ,
-                image: this.image,
-                   
-            };
-    
-        console.log(nasaDataSets)
-        console.log(favoriteObject)
-        this.$store.dispatch('favoriteObject', {
-          title: this.nasaDataSets.title,
-        image: this.nasaDataSets.image,
-        description: this.description,
-        dateCreated: this.dateCreated
-      })
+      addFavorite(index){
+ 
+     //console.log(nasaDataSets[5])
+  
+     this.favoriteArray.push({...nasaDataSets[index]})
+
+    console.log(this.favoriteArray)
+   console.log(nasaDataSets[index])
+        this.$store.dispatch('favoriteArray')
       }
     }
 }
