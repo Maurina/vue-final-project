@@ -11,7 +11,7 @@ export default new Vuex.Store({
       name: 'Guest',
       date: new Date().toISOString().substr(0, 10)
     },
-    favoritesList: []
+    favorite: []
   },
   getters: {
     user (state) {
@@ -24,7 +24,7 @@ export default new Vuex.Store({
       return state.user.date
     },
     favoritesList (state) {
-      return state.favoritesList.title
+      return state.favorites
     },
     favoriteDate (state) {
       return state.favoriteDate.date
@@ -34,8 +34,8 @@ export default new Vuex.Store({
     storeUser (state, user) {
       return (state.user = user)
     },
-    storeFavoriteList (state, favoritesList) {
-      return (state.favoritesList = favoritesList)
+    storeFavoriteList (state, favorite) {
+      return (state.favorite.push(favorite))
     }
 
   },
@@ -43,6 +43,9 @@ export default new Vuex.Store({
     userLogIn ({ commit }, user) {
       commit('storeUser', user)
       router.replace('/favorites')
+    },
+    favoriteAdded ({ commit }, favorite) {
+      commit('storeFavoriteList', favorite)
     }
 
   }

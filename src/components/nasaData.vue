@@ -50,14 +50,13 @@ export default {
 
     methods: {
       addFavorite(index){
- 
-     //console.log(nasaDataSets[5])
-  
      this.favoriteArray.push({...nasaDataSets[index]})
 
     console.log(this.favoriteArray)
    console.log(nasaDataSets[index])
-        this.$store.dispatch('favoriteArray')
+       // this.$store.dispatch('favoritesList', [favoriteList.push({...nasaDataSets[index]})])
+       // this.$store.state.storeFavoriteList(this.favoriteArray)
+         this.$store.dispatch('favoriteAdded', [this.favoriteArray])
       }
     }
 }

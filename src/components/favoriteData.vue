@@ -3,7 +3,32 @@
     
     
       <h1>Welcome :  {{ userName }}  </h1>
-<
+<h2> {{  $store.state.favorite }} </h2>
+     <v-row>
+       <v-col col="3" v-for="(favorites, index) in $store.state.favorite" v-bind:key="index">
+       
+         <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
+           <div class="spacing"></div>
+            <v-img class="image" v-bind:src="`./assets/images/${favorites.image}`" > </v-img>
+            
+              <v-expansion-panels>
+      <v-expansion-panel>
+        <v-expansion-panel-header class="textStyle" :title="title" >{{ favorites.title }}</v-expansion-panel-header>
+        <v-expansion-panel-content>
+   
+                <v-card-text :description="description"> {{ favorites.description }}  </v-card-text>
+                <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ favorites.dateCreated }} </v-card-subtitle>
+               
+   
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+       </v-card>
+      </v-col>
+     </v-row>
+
+
+
   <v-form v-on:submit.prevent="getResult(userDate)" class="formDate">
                     <input type="hidden" v-model="userDate" minlength="10" maxlength="10" > 
                   
@@ -35,7 +60,7 @@ export default {
        userName(){
            return this.$store.getters.userName
        },
-        favoriteDate(){
+        favoritesList(){
             return this.$store.getters.favoritesList
         }
    },
@@ -45,10 +70,13 @@ export default {
        name: '',
        explanation: '',
        url: '',
-       title: ''
+       title: '',
+       dateCreated:'',
+       description:''
     }
    },
    methods: {
+
         getResult(date) {
             return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
             (response =>{
