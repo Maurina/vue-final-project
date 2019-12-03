@@ -104,6 +104,7 @@ data: () => ({
       this.$store.dispatch('userLogIn', {
           name: this.name,
           date: this.date
+
       })
       axios.post('https://vue-nasa.firebaseio.com/users.json', formData)
       .then(res => console.log(res))
@@ -115,28 +116,6 @@ data: () => ({
       }
     },
   },
-
-        getResult(date) {
-            return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
-            (response =>{
-                this.explanation = response.data.explanation
-                this.date = response.data.date
-                this.url = response.data.url
-                this.title = response.data.title
-                console.log('response')
-            }).catch(error => console.log(error))
-          this.$store.dispatch('favoriteDate', {
-          explanation: this.explanation,
-          date: this.date,
-          url: this.url,
-          title: this.title
-      })
-        }
-    
-
-
-
-
 };
 </script>
 
@@ -148,7 +127,7 @@ data: () => ({
     padding: 2%;
 }
 h3{
-  color: white;
+  color: black;
 }
 .btn{
   margin-left: 2%;

@@ -3,7 +3,7 @@
        
         <!--<v-btn >Date Created</v-btn> -->
      <v-row>
-       <v-col col="3" v-for="nasaDataSet in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
+       <v-col col="3" v-for="(nasaDataSet, index) in nasaDataSets" v-bind:key="nasaDataSet.dateCreated">
        
          <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
@@ -14,7 +14,7 @@
         <v-expansion-panel-header class="textStyle" :title="title" >{{ nasaDataSet.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
    
-                <v-card-text :description="description"> {{ nasaDataSet.description }} </v-card-text>
+                <v-card-text :description="description"> {{ nasaDataSet.description }} {{ index }} </v-card-text>
                 <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ nasaDataSet.dateCreated }} </v-card-subtitle>
                 <v-card-actions>
                   <v-btn  color="black white--text"   type="submit"  @click="onSubmit"
@@ -43,7 +43,7 @@ export default {
            description: '',
            dateCreated: '',
            image: '',
-           nasaDataSets: nasaDataSets
+       
         }
       },
   //mixins: [dataMixin],
@@ -64,7 +64,7 @@ export default {
         console.log(favoriteObject)
         this.$store.dispatch('favoriteObject', {
           title: this.nasaDataSets.title,
-        image: this.nasaDataSet.image,
+        image: this.nasaDataSets.image,
         description: this.description,
         dateCreated: this.dateCreated
       })
