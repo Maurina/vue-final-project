@@ -3,21 +3,23 @@
     
     
       <h1>Welcome :  {{ userName }}  </h1>
-<h2> {{  $store.state.favorite }} </h2>
+
+
+
      <v-row>
-       <v-col col="3" v-for="(favorites, index) in $store.state.favorite" v-bind:key="index">
+       <v-col col="3" v-for="(favorite, index) in favoritesList[0][0]" v-bind:key="index">
        
          <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
-            <v-img class="image" v-bind:src="`./assets/images/${favorites.image}`" > </v-img>
+            <v-img class="image" v-bind:src="`./assets/images/${favorite.image}`" > </v-img>
             
               <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header class="textStyle" :title="title" >{{ favorites.title }}</v-expansion-panel-header>
+        <v-expansion-panel-header class="textStyle" :title="title" >{{ favorite.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
    
-                <v-card-text :description="description"> {{ favorites.description }}  </v-card-text>
-                <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ favorites.dateCreated }} </v-card-subtitle>
+                <v-card-text :description="description"> {{ favorite.description }}  </v-card-text>
+                <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ favorite.dateCreated }} </v-card-subtitle>
                
    
         </v-expansion-panel-content>
@@ -53,6 +55,7 @@
 <script>
 import axios from 'axios'
 export default {
+    props: ['favorite'],
    computed:{
         userDate(){
            return this.$store.getters.userDate
@@ -72,7 +75,8 @@ export default {
        url: '',
        title: '',
        dateCreated:'',
-       description:''
+       description:'',
+       favorites: favoritesList[0][0]
     }
    },
    methods: {
@@ -85,8 +89,10 @@ export default {
                 this.url = response.data.url
                 this.title = response.data.title
                 console.log(response)
+            
             }).catch(error => console.log(error))
-        }
+        },
+
     } 
 }
 </script>

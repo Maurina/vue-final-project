@@ -24,7 +24,7 @@ export default new Vuex.Store({
       return state.user.date
     },
     favoritesList (state) {
-      return state.favorites
+      return state.favorite
     },
     favoriteDate (state) {
       return state.favoriteDate.date
