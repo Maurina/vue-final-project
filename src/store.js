@@ -42,7 +42,7 @@ export default new Vuex.Store({
   actions: {
     userLogIn ({ commit }, user) {
       commit('storeUser', user)
-      router.replace('/favorites')
+      router.replace('/data')
     },
     favoriteAdded ({ commit }, favorite) {
       commit('storeFavoriteList', favorite)

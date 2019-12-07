@@ -54,8 +54,6 @@ export default {
 
     console.log(this.favoriteArray)
    console.log(nasaDataSets[index])
-       // this.$store.dispatch('favoritesList', [favoriteList.push({...nasaDataSets[index]})])
-       // this.$store.state.storeFavoriteList(this.favoriteArray)
          this.$store.dispatch('favoriteAdded', [this.favoriteArray])
       }
     }

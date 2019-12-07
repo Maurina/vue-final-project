@@ -33,15 +33,15 @@
                 counter
                 @click:append="show1 = !show1"
             ></v-text-field>
-               <h3>Choose your favorite day from June 16, 1995 to present</h3>
-               <v-date-picker 
+           <!--     <h3>Choose your favorite day from June 16, 1995 to present</h3>
+             <v-date-picker 
                   v-model="date" 
                   scrollable 
                   color="black" 
                   no-title
                   min="1995-06-16"
       
-               ></v-date-picker>
+               ></v-date-picker> -->
                
             <v-btn
                 :disabled="!valid"
@@ -67,7 +67,7 @@ import { required, maxLength, email, sameAs } from 'vuelidate/lib/validators'
 export default {
 
 data: () => ({
-   valid: true,
+   valid: false,
     name: '',
     nameRules: [
       v => !!v || 'Name is required',
@@ -100,15 +100,13 @@ data: () => ({
         password: this.password,
         date: this.date
       }
-      console.log(formData)
+   
       this.$store.dispatch('userLogIn', {
           name: this.name,
           date: this.date
 
       })
-      axios.post('https://vue-nasa.firebaseio.com/users.json', formData)
-      .then(res => console.log(res))
-      .catch(error => console.log(error))
+     
     },
     validate () {
       if (this.$refs.form.validate()) {
