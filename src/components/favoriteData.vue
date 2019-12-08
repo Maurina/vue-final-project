@@ -2,7 +2,7 @@
     <div>
 
       <h1>Welcome :  {{ userName }}  </h1>
-      <h1> {{ userDate }} </h1>>        
+   
      <v-row v-if="favoritesList.length">
        <v-col col="3" v-for="(favorite, index) in favoritesList[0][0]" v-bind:key="index">
        
