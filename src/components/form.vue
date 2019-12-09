@@ -67,7 +67,7 @@ import { required, maxLength, email, sameAs } from 'vuelidate/lib/validators'
 export default {
 
 data: () => ({
-   valid: false,
+   valid: true,
     name: '',
     nameRules: [
       v => !!v || 'Name is required',
